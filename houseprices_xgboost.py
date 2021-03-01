@@ -147,9 +147,9 @@ kf = KFold(n_splits=folds)
 
 # ハイパーパラメータの設定
 params = {
-    'max_depth': 7,
-    'colsample_bytree': 0.6244752498895471,
-    'sublsample': 0.21343523881653348
+    'max_depth': 3,
+    'colsample_bytree': 0.42079984564692874,
+    'sublsample': 0.45459753965983585
 }
 
 # 各foldごとに作成したモデルごとの予測値を保存
