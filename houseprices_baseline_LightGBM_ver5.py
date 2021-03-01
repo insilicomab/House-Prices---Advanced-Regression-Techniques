@@ -7,10 +7,10 @@ Created on Sat Jan 30 18:01:43 2021
 
 """
 コメント：
-コメント：
 ver2: EDA後にSalePriceを対数化し、正規分布化させ、予測精度の向上を確認する。
 ver3: 説明変数の前処理、外れ値の除外
 ver4: 特徴量を生成する
+ver5: 最適ハイパーパラメータ適用
 """
 
 '''
@@ -166,13 +166,13 @@ params = {
     'random_seed':1234,
     'learning_rate':0.05,        
     'n_estimators':1000,
-    'num_leaves': 48, 
-    'max_bin': 63, 
-    'bagging_fraction': 0.4082148147957371, 
-    'bagging_freq': 7, 
-    'feature_fraction': 0.4046200367432704, 
-    'min_data_in_leaf': 15, 
-    'min_sum_hessian_in_leaf': 9
+    'num_leaves': 18,
+    'max_bin': 193,
+    'bagging_fraction': 0.6373487511442064,
+    'bagging_freq': 8, 
+    'feature_fraction': 0.5690038074194459,
+    'min_data_in_leaf': 7,
+    'min_sum_hessian_in_leaf': 6
 }
 
 # 各foldごとに作成したモデルごとの予測値を保存
@@ -221,5 +221,5 @@ for model in models:
 
 """
 予測精度：
-0.11488056386448141
+0.11521481179409543
 """
