@@ -191,7 +191,7 @@ def objective(trial):
 
 study = optuna.create_study(sampler=optuna.samplers.RandomSampler(seed=0))
 study.optimize(objective, n_trials=50)
-study.best_params
+print(study.best_params)
 
 """
 best_params：
