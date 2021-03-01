@@ -181,12 +181,11 @@ def objective(trial):
 
 study = optuna.create_study(sampler=optuna.samplers.RandomSampler(seed=0))
 study.optimize(objective, n_trials=50)
-study.best_params
+print(study.best_params)
 
 """
 best_params：
-{'max_depth': 7,
- 'colsample_bytree': 0.6244752498895471,
- 'sublsample': 0.21343523881653348
- }
+{'max_depth': 3,
+ 'colsample_bytree': 0.42079984564692874,
+ 'sublsample': 0.45459753965983585}
 """
