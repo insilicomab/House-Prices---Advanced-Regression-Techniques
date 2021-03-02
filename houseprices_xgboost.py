@@ -166,11 +166,13 @@ for train_index, val_index in kf.split(X_train):
     xgb_train = xgb.DMatrix(x_train, label=y_train)
     xgb_eval = xgb.DMatrix(x_valid, label=y_valid)   
     evals = [(xgb_train, "train"), (xgb_eval, "eval")]
-    model = xgb.train(params, xgb_train,
-    evals=evals,
-    num_boost_round=1000,
-    early_stopping_rounds=20,
-    verbose_eval=20)
+    model = xgb.train(params, 
+                      xgb_train,
+                      evals=evals,
+                      num_boost_round=1000,
+                      early_stopping_rounds=20,
+                      verbose_eval=20)
+    
     y_pred = model.predict(xgb_eval)
     rmse = np.sqrt(mean_squared_error(y_valid, y_pred))
     print(rmse)
